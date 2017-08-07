@@ -3,10 +3,8 @@
 import express from 'express';
 import { graphiqlExpress, graphqlExpress } from 'graphql-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
-import bodyParser from 'body-parser';
 import { createServer } from 'http';
 import { SubscriptionServer } from 'subscriptions-transport-ws';
-import jwt from 'jsonwebtoken';
 import { execute, subscribe } from 'graphql';
 
 import './config/db';
