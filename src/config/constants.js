@@ -13,7 +13,7 @@ const prodConfig = {
 
 const defaultConfig = {
     JWT_SECRET: process.env.JWT_SECRET || 'NIMscUiP1YTX9jGnySL5oRzBmeJuLRp5',
-    PORT: process.env.PORT || 3005,
+    PORT: process.env.PORT || 3001,
     GRAPHQL_PATH: '/graphql',
     SUBSCRIPTIONS_PATH: '/subscriptions',
 };

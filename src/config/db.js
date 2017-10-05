@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
-import config from '../config/config';
+import constants from './constants';
 
 mongoose.Promise = global.Promise;
 
 mongoose.set('debug', true);
 
 try {
-    mongoose.connect(config.MONGO_URL, {
+    mongoose.connect(constants.MONGO_URL, {
         useMongoClient: true,
     });
 } catch (err) {

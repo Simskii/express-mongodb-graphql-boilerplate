@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 import { hashSync, compareSync } from 'bcrypt-nodejs';
 import jwt from 'jsonwebtoken';
 
-import config from '../config/config';
+import constants from '../config/constants';
 
 const UserSchema = new Schema(
     {
@@ -47,7 +47,7 @@ UserSchema.methods = {
             {
                 _id: this._id,
             },
-            config.JWT_SECRET,
+            constants.JWT_SECRET,
         );
     },
 };

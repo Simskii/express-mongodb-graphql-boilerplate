@@ -24,7 +24,7 @@ export default `
   }
 
   type Mutation {
-    signup(fullName: String!, email: String!, password: String!, username: String!, avatar: String!): Auth
+    signup(firstname: String!, lastname: String!, email: String!, password: String!, avatar: String): Auth
     login(email: String!, password: String!): Auth
   }
 

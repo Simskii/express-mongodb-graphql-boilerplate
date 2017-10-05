@@ -9,16 +9,22 @@ export default {
         };
     },
     login: async (_, { email, password }) => {
-        const user = await User.findOne({ email });
-        if (!user || !user.authenticateUser(password)) {
-            throw new Error('Username or password is incorrect!');
+        try {
+            const user = await User.findOne({ email });
+            if (!user || !user.authenticateUser(password)) {
+                throw new Error('Username or password is incorrect!');
+            }
+            return {
+                token: user.createToken(),
+            };
+        } catch (error) {
+            return error;
         }
-        return {
-            token: user.createToken(),
-        };
     },
     getUsers: async (_, args, { user }) => {
-        const users = await User.find();
+        const users = await User.find({
+            tenant: user.tenant,
+        });
         return users;
     },
 };
